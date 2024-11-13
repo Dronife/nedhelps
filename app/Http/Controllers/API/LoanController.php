@@ -20,6 +20,11 @@ class LoanController extends Controller
     ) {
     }
 
+    public function fetchAll(): JsonResponse
+    {
+        return response()->json($this->loanProviderService->fetchAll());
+    }
+
     public function fetch(int $id): JsonResponse
     {
         $loan = $this->loanProviderService->fetchById($id);

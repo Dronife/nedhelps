@@ -12,4 +12,5 @@ Route::prefix('loans')->group(function () {
     Route::post('/', [LoanController::class, 'create']);
     Route::patch('/{id}', [LoanController::class, 'update']);
     Route::get('/{id}', [LoanController::class, 'fetch']);
+    Route::get('/', [LoanController::class, 'fetchAll']);
 });
