@@ -6,6 +6,8 @@ namespace App\Http\Service;
 
 use App\Http\Domain\Loan\LoanModifier;
 use App\Http\Request\LoanCreateDto;
+use App\Http\Request\LoanUpdateDto;
+use App\Http\Requests\LoanUpdateRequest;
 use App\Models\Loan;
 
 class LoanModifierService
@@ -18,5 +20,10 @@ class LoanModifierService
     public function create(LoanCreateDto $createLoanDto): Loan
     {
         return $this->loanModifier->create($createLoanDto);
+    }
+
+    public function update(int $id, LoanUpdateDto $loanUpdateRequest, array $presentKeys): int
+    {
+        return $this->loanModifier->update($id, $loanUpdateRequest, $presentKeys);
     }
 }
