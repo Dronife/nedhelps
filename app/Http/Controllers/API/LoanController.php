@@ -63,4 +63,15 @@ class LoanController extends Controller
             return response()->json($e->getMessage(), Response::HTTP_BAD_REQUEST);
         }
     }
+
+    public function delete(int $id): JsonResponse
+    {
+        try {
+            $this->loanModifierService->delete($id);
+
+            return response()->json(null, Response::HTTP_NO_CONTENT);
+        } catch (\Exception $e) {
+            return response()->json($e->getMessage(), Response::HTTP_BAD_REQUEST);
+        }
+    }
 }

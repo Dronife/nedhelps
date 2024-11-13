@@ -66,4 +66,27 @@ class LoanModifier
             throw $e;
         }
     }
+
+    /**
+     * @throws \Exception
+     */
+    public function delete(int $id): int
+    {
+        DB::beginTransaction();
+        try {
+            $loan = $this->loanProvider->getById($id);
+            if ($loan === null) {
+                throw new ModelNotFoundException('Loan not found');
+            }
+
+            $loan->delete();
+
+            DB::commit();
+
+            return $id;
+        } catch (\Exception $e) {
+            DB::rollBack();
+            throw $e;
+        }
+    }
 }

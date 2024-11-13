@@ -26,4 +26,9 @@ class LoanModifierService
     {
         return $this->loanModifier->update($id, $loanUpdateRequest, $presentKeys);
     }
+
+    public function delete(int $id): void
+    {
+        $this->loanModifier->delete($id);
+    }
 }

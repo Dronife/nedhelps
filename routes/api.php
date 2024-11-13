@@ -13,4 +13,5 @@ Route::prefix('loans')->group(function () {
     Route::patch('/{id}', [LoanController::class, 'update']);
     Route::get('/{id}', [LoanController::class, 'fetch']);
     Route::get('/', [LoanController::class, 'fetchAll']);
+    Route::delete('/{id}', [LoanController::class, 'delete']);
 });
