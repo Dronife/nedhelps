@@ -6,7 +6,6 @@ namespace App\Http\Domain\Loan;
 
 use App\Http\Request\LoanCreateDto;
 use App\Http\Request\LoanUpdateDto;
-use App\Http\Requests\LoanUpdateRequest;
 use App\Http\Shared\KeyTrait;
 use App\Models\Loan;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
